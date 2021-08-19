@@ -1,4 +1,4 @@
-Feature: [SUC:08-02] Maintain Debt Management Case
+Feature: [SUC:08-02] Maintain Debt Management Case - Agent Appointment
 
   @Agent-Appointment-close
   Scenario: UAT_M8_08-02-12-Verify the Process of Close Debt Management Case - Agent Appointment- Debt Officer
@@ -18,7 +18,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     And clicks close case checkbox
     And enters case closure details reason for closure
     And clicks close case Submit button
-    Then Debt status should be "closed"
+    Then Debt status should be "Closed"
 
   @Agent-Appointment
   Scenario: UAT_M8_08-02-03-UAT_M8_08-02-16-UAT_M8_08-02-17-UAT_M8_08-02-18-Verify the Process of Escalated Case - Agent Appointment- Debt Officer
@@ -28,7 +28,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     And click on Queues
     Then switch to frame0
     And enters Debt reference number in search results
-    And picks the audit case
+   And picks the audit case
     And click pick button
     Then switch to frame0
     Then Click on reference number
@@ -61,7 +61,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And pick the debt case
+    And click pick button
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Agent Approval By Tax Collector"
@@ -80,7 +80,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And click pick button
+    And pick the case
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Agent Approval By Station Manager"
@@ -99,7 +99,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And click pick button
+    And pick the case
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Agent Approval By Deputy Commissioner Operations"
@@ -145,7 +145,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame1
     And Select Approval outcome value to Approve "commissionergeneral"
     Then Click on Save button
-    Then Debt status should be "Agent Approved By Commissioner General"
+    Then Debt status should be "Agent Approved"
 
   @debtofficer @Agent-Appointment
   Scenario: UAT_M8_08-02-03-UAT_M8_08-02-16-UAT_M8_08-02-17-UAT_M8_08-02-18-Verify the Process of Escalated Case - Agent Appointment -Debt Officer
@@ -159,10 +159,10 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     And click pick button
     Then switch to frame0
     Then Click on reference number
-    Then Debt status should be "Agent Approved By Commissioner General"
+    Then Debt status should be "Agent Approved"
     And wait for plan to load "Appointment of Agent Number"
     Then switch to frame1
-    Then Debt status should be "Agent Approved By Commissioner General"
+    Then Debt status should be "Agent Approved"
 
 
 

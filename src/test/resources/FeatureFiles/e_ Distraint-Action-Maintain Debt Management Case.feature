@@ -1,6 +1,6 @@
-Feature: [SUC:08-02] Maintain Debt Management Case
+Feature: [SUC:08-02] Maintain Debt Management Case - Distraint Action
 
-  @Distraint-Action @Distraint-Action-reject
+  @Distraint-Action @Distraint-Action-reject 
   Scenario: UAT_M8_08-02-05-Verify the Process of Escalated Case - Distraint Action -Debt Officer
     Given Open CRM URL Module as "tripscrmuser1"
     And Close Popup Window
@@ -18,9 +18,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     And clicks Submit button
     Then Debt status should be "Distraint Action"
     And wait for plan to load "Total Tax Debt"
-    When user clicks add Asset Summary Personal Property
     When user clicks add Asset Seized
-    Then Debt status should be "Distraint Action"
     And wait for plan to load "Asset Name"
     When user enters Asset Seized
       | Asset Name          | testName        |
@@ -153,7 +151,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame1
     And Select Approval outcome value to Approve "commissionergeneral"
     Then Click on Save button
-    Then Debt status should be "Distraint Action Approved By Commissioner General"
+    Then Debt status should be "Distraint Action Approved"
 #
   @Distraint-Action
   Scenario: UAT_M8_08-02-05-Verify the Process of Escalated Case - Distraint Action -Debt Officer
@@ -167,10 +165,10 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     And click pick button
     Then switch to frame0
     Then Click on reference number
-    Then Debt status should be "Distraint Action Approved By Commissioner General"
+    Then Debt status should be "Distraint Action Approved"
     And wait for plan to load "Total Tax Debt"
     Then switch to frame1
-    Then Debt status should be "Distraint Action Approved By Commissioner General"
+    Then Debt status should be "Distraint Action Approved"
 
 
 

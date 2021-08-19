@@ -1,4 +1,4 @@
-Feature: [SUC:08-02] Maintain Debt Management Case
+Feature: [SUC:08-02] Maintain Debt Management Case - Legal Action
 
   @Legal-Action
   Scenario: UAT_M8_08-02-07-UAT_M8_08-02-11-Verify the Process of Escalated Case - Legal Action -Debt Officer

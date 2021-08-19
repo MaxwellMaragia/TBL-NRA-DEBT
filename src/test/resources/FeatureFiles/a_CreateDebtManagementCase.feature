@@ -17,9 +17,9 @@ Feature: [SUC:08-03]-Create Debt Management Case
   @SUC:08-01 @UAT_M8-08-01-01 @UAT_M8-08-01-02
   Scenario: UAT_M8-08-01-01-Verify the process of installment agreement-Organization
     And Click on debt management > Create debt management case
-    And enter "1000046001" and click search
+    And enter "1000055000" and click search
     Then CREATE DEBT MANAGEMENT CASE window is placed
-    When the user enters taxtype "Personal Income Tax" and value of debt "1000000" return tpe and period "1/2020"
+    When the user enters taxtype "Personal Income Tax" and value of debt "100" return tpe and period "1/2020"
     Then CREATE DEBT MANAGEMENT CASE window is placed
     When User enters Case Title "testDebt case" and Office "BOMTO"
     Then Verify message "Processing Completed - Reference Number"

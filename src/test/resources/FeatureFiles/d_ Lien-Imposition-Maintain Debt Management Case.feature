@@ -1,4 +1,4 @@
-Feature: [SUC:08-02] Maintain Debt Management Case
+Feature: [SUC:08-02] Maintain Debt Management Case -Lien Imposition
 
   @Lien-Imposition-cancel
   Scenario: UAT_M8_08-02-04-UAT_M8_08-02-08Verify the Process of Escalated Case -Lien Imposition -Debt Officer
@@ -73,7 +73,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-#    And pick the debt case
+    And click pick button
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Lien Imposition Approval By Tax Collector"
@@ -92,7 +92,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And click pick button
+    And pick the case
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Lien Imposition Approval By Station Manager"
@@ -111,7 +111,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And click pick button
+    And pick the case
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Lien Imposition Approval By Deputy Commissioner Operations"
@@ -157,7 +157,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame1
     And Select Approval outcome value to Approve "commissionergeneral"
     Then Click on Save button
-    Then Debt status should be "Lien Imposition Approved By Commissioner General"
+    Then Debt status should be "Lien Imposition Approved"
 
   @Lien-Imposition
   Scenario: UAT_M8_08-02-04-UAT_M8_08-02-0-Verify the Process of Approval Required -Debt Officer
@@ -171,10 +171,10 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     And click pick button
     Then switch to frame0
     Then Click on reference number
-    Then Debt status should be "Lien Imposition Approved By Commissioner General"
+    Then Debt status should be "Lien Imposition Approved"
     And wait for plan to load "Lien Number"
     Then switch to frame1
-    Then Debt status should be "Lien Imposition Approved By Commissioner General"
+    Then Debt status should be "Lien Imposition Approved"
 
 
 

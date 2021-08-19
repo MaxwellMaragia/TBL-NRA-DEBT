@@ -1,6 +1,6 @@
-Feature: [SUC:08-02] Maintain Debt Management Case
+Feature: [SUC:08-02] Maintain Debt Management Case - Write-Off
 
-  @Debt-Officer @Write-Off
+  @Debt-Officer
   Scenario:UAT_M8_08-02-10-Verify the Process of Validation Failed - Write-Off -Debt-Officer
     Given Open CRM URL Module as "tripscrmuser1"
     And Close Popup Window
@@ -19,7 +19,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame1
     Then validation error displayed " This field can not be empty. "
 
-  @Write-Off @boom
+  @Write-Off
   Scenario: UAT_M8_08-02-01-UAT_M8_08-02-02-Verify the Process of Escalated Case - Write-Off -Debt-Officer
     Given Open CRM URL Module as "tripscrmuser1"
     And Close Popup Window
@@ -28,7 +28,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-#    And click pick button
+    And click pick button
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "New"
@@ -58,7 +58,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And pick the debt case
+    And click pick button
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Write Off Approval By Tax Collector"
@@ -77,7 +77,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And click pick button
+    And pick the case
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Write Off Approval By Station Manager"
@@ -96,7 +96,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And click pick button
+    And pick the case
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Write Off Approval By Deputy Commissioner Operations"

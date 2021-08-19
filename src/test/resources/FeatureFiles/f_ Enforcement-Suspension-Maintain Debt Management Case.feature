@@ -1,4 +1,4 @@
-Feature: [SUC:08-02] Maintain Debt Management Case
+Feature: [SUC:08-02] Maintain Debt Management Case -Enforcement Suspension
 
 
   @Enforcement-Suspension
@@ -119,7 +119,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     Then switch to frame1
     And Select Approval outcome value to Approve "commissionergeneral"
     Then Click on Save button
-    Then Debt status should be "Enforcement Suspension Approved By Commissioner General"
+    Then Debt status should be "Enforcement Suspension Approved"
 #
   @Enforcement-Suspension
   Scenario: UAT_M8_08-02-06-Verify the Process of Escalated Case -Enforcement Suspension  -Debt Officer
@@ -133,10 +133,10 @@ Feature: [SUC:08-02] Maintain Debt Management Case
     And click pick button
     Then switch to frame0
     Then Click on reference number
-    Then Debt status should be "Enforcement Suspension Approved By Commissioner General"
+    Then Debt status should be "Enforcement Suspension Approved"
     And wait for plan to load "Total Tax Debt"
     Then switch to frame1
-    Then Debt status should be "Enforcement Suspension Approved By Commissioner General"
+    Then Debt status should be "Enforcement Suspension Approved"
 
 
 

@@ -227,7 +227,7 @@ public class stepDefinitions extends BaseClass {
 
         search.clear();
         Thread.sleep(2000);
-        //search.sendKeys("*DM/000002585/2021");
+        //search.sendKeys("*DM/000033278/2021");
         search.sendKeys("*" + sharedatastep.DEBT_ARN_ORG);
         Thread.sleep(2000);
         search.sendKeys(Keys.ENTER);
@@ -248,7 +248,14 @@ public class stepDefinitions extends BaseClass {
 
     @And("^pick the debt case$")
     public void pick_the_debt_case() throws Throwable {
-        WebElement pickButton = driver.findElement(By.xpath("//*[@id=\"queueitem|NoRelationship|HomePageGrid|tbg.queueitem.HomepageGrid.Pick\"]/span"));
+        WebElement pickButton = sixty.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"queueitem|NoRelationship|HomePageGrid|tbg.queueitem.HomepageGrid.Pick\"]/span")));
+        Actions actions = new Actions(driver);
+        actions.doubleClick(pickButton).perform();
+    }
+
+    @And("^pick the case$")
+    public void pick_the_case() throws Throwable {
+        WebElement pickButton = sixty.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()=' Pick ']")));
         Actions actions = new Actions(driver);
         actions.doubleClick(pickButton).perform();
     }
@@ -278,7 +285,7 @@ public class stepDefinitions extends BaseClass {
         driver.switchTo().defaultContent();
         Thread.sleep(3000);
         driver.switchTo().frame("contentIFrame1");
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, 200);
         Thread.sleep(3000);
         String text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='" + Status + "']"))).getText();
         Assert.assertEquals(Status, text);
@@ -287,7 +294,7 @@ public class stepDefinitions extends BaseClass {
 
     @And("^wait for plan to load \"([^\"]*)\"$")
     public void wait_for_duplicate_check(String strArg1) throws Throwable {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, 200);
         driver.switchTo().defaultContent();
         Thread.sleep(3000);
         driver.switchTo().frame("contentIFrame1");
@@ -409,7 +416,7 @@ public class stepDefinitions extends BaseClass {
         expiryDate.click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("/html/body/trips-app/div/app-debt-management/app-appointment-details/div/div/form/div/div[1]/div/div/tb-date-picker[2]/div/div[2]/div/p-calendar/span/div/div/div[2]/table/tbody/tr[5]/td[6]/a")).click();
-
+        Thread.sleep(3000);
         WebElement appointmentStatus = ten.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/trips-app/div/app-debt-management/app-appointment-details/div/div/form/div/div[1]/div/div/tb-dropdown[2]/div/div[2]/div/p-dropdown/div/label")));
         appointmentStatus.click();
         Thread.sleep(2000);
@@ -556,7 +563,7 @@ public class stepDefinitions extends BaseClass {
         enforcementAction.click();
         Thread.sleep(2000);
         driver.findElement(By.xpath("//li[span='" + strArg1 + "']")).click();
-
+        Thread.sleep(5000);
         WebElement Reason = driver.findElement(By.xpath("/html/body/trips-app/div/app-debt-management/app-enforcement-process/div/div/form/div[2]/div/div/tb-dropdown[2]/div/div[2]/div/p-dropdown/div/label"));
         Reason.click();
         Thread.sleep(2000);
@@ -1123,7 +1130,7 @@ public class stepDefinitions extends BaseClass {
             ten.until(ExpectedConditions.visibilityOfElementLocated(By.id("SearchForm:accountNumber"))).sendKeys(tin);
             ten.until(ExpectedConditions.visibilityOfElementLocated(By.id("SearchForm:agreementNumber"))).sendKeys(number);
         }
-        ten.until(ExpectedConditions.visibilityOfElementLocated(By.id("SearchForm:j_idt42"))).click();
+        ten.until(ExpectedConditions.visibilityOfElementLocated(By.id("SearchForm:j_idt40"))).click();
     }
 
     @Then("Enter cancellation reason {string}")
@@ -1282,7 +1289,7 @@ public class stepDefinitions extends BaseClass {
 
     @Then("^CREATE DEBT MANAGEMENT CASE window is placed$")
     public void create_debt_management_case_window_is_placed() throws Throwable {
-        WebElement createCaseTitle = twentyfive.until(ExpectedConditions.visibilityOfElementLocated(By.id("DebtManagementCase:DebtManagementCasePanel_header")));
+        WebElement createCaseTitle = fourty.until(ExpectedConditions.visibilityOfElementLocated(By.id("DebtManagementCase:DebtManagementCasePanel_header")));
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", createCaseTitle);
         Thread.sleep(5000);
@@ -1316,7 +1323,7 @@ public class stepDefinitions extends BaseClass {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//li[@data-label='" + strArg1 + "']")).click();
 
-        Thread.sleep(8000);
+        Thread.sleep(3000);
         WebElement returnTypedropdown = driver.findElement(By.xpath("//*[@id=\"DebtCaseTaxType:ReturnType\"]/div[3]"));
         returnTypedropdown.click();
         Thread.sleep(2000);
@@ -1327,7 +1334,7 @@ public class stepDefinitions extends BaseClass {
         debtInput.sendKeys(strArg2);
 
 
-        Thread.sleep(8000);
+        Thread.sleep(3000);
         WebElement periodDropdown = ten.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"DebtCaseTaxType:PeriodValue\"]/div[3]")));
         periodDropdown.click();
         Thread.sleep(2000);
