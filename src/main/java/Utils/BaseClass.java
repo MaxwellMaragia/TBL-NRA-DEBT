@@ -46,7 +46,7 @@ public class BaseClass {
 	
 	public static String todaysDate() {
 		LocalDate today = LocalDate.now();
-    	String formattedDate = today.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT));
+    	String formattedDate = today.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     	return formattedDate;
 	}
 	public static String tomorrowsDate() {
@@ -54,6 +54,13 @@ public class BaseClass {
 		LocalDate tomorrow = today.plus(1, ChronoUnit.DAYS);
     	String formattedDate = tomorrow.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     	return formattedDate;
+	}
+
+	public static String daysFromToday(int i){
+		LocalDate today = LocalDate.now();
+		LocalDate tomorrow = today.plus(i, ChronoUnit.DAYS);
+		String formattedDate = tomorrow.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		return formattedDate;
 	}
 
 	public static String getRandom(int n)

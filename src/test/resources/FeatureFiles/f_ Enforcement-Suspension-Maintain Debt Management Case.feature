@@ -34,7 +34,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case -Enforcement Suspension
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And pick the debt case
+    And click pick button
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Enforcement Suspension Approval By Tax Collector"
@@ -54,7 +54,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case -Enforcement Suspension
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-#    And click pick button
+    And click pick button
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Enforcement Suspension Approval By Station Manager"
@@ -73,7 +73,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case -Enforcement Suspension
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-#    And click pick button
+    And pick the case
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Enforcement Suspension Approval By Deputy Commissioner Operations"

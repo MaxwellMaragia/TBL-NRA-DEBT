@@ -33,7 +33,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case -Lien Imposition
     Then Click on reference number
     Then Debt status should be "New"
     And wait for plan to load "Total Debt:"
-    When user enters Enforcement Action "Lien Imposition" and Reason "Lien Imposition"
+    When user enters Enforcement Action "Lien Imposition" and Reason "Cancel Lien"
     And clicks Submit button
     Then Debt status should be "Lien Imposition"
     And wait for plan to load "Lien Number"
@@ -92,7 +92,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case -Lien Imposition
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And pick the case
+    And click pick button
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Lien Imposition Approval By Station Manager"

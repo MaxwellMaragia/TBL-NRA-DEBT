@@ -202,7 +202,8 @@ public class stepDefinitions extends BaseClass {
 
     @And("^Click on Case management dropdown$")
     public void click_on_case_management_dropdown() throws Throwable {
-        driver.findElement(By.xpath("//*[@id=\"TabCS\"]/a/span")).click();
+       Thread.sleep(2000);
+        twenty.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"TabCS\"]/a/span"))).click();
     }
 
     @And("^click on Queues$")
@@ -227,7 +228,7 @@ public class stepDefinitions extends BaseClass {
 
         search.clear();
         Thread.sleep(2000);
-        //search.sendKeys("*DM/000033278/2021");
+        //search.sendKeys("*DM/000035168/2021");
         search.sendKeys("*" + sharedatastep.DEBT_ARN_ORG);
         Thread.sleep(2000);
         search.sendKeys(Keys.ENTER);
@@ -409,13 +410,18 @@ public class stepDefinitions extends BaseClass {
         WebElement dateOfAppointment = ten.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/trips-app/div/app-debt-management/app-appointment-details/div/div/form/div/div[1]/div/div/tb-date-picker[1]/div/div[2]/div/p-calendar/span/input")));
         dateOfAppointment.click();
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/trips-app/div/app-debt-management/app-appointment-details/div/div/form/div/div[1]/div/div/tb-date-picker[1]/div/div[2]/div/p-calendar/span/div/div/div[2]/table/tbody/tr[1]/td[7]/a")).click();
+        dateOfAppointment.sendKeys(todaysDate());
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.TAB).perform();
+        Thread.sleep(2000);
 
 
         WebElement expiryDate = ten.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/trips-app/div/app-debt-management/app-appointment-details/div/div/form/div/div[1]/div/div/tb-date-picker[2]/div/div[2]/div/p-calendar/span/input")));
         expiryDate.click();
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/trips-app/div/app-debt-management/app-appointment-details/div/div/form/div/div[1]/div/div/tb-date-picker[2]/div/div[2]/div/p-calendar/span/div/div/div[2]/table/tbody/tr[5]/td[6]/a")).click();
+        expiryDate.sendKeys(daysFromToday(5));
+        actions.sendKeys(Keys.TAB).perform();
+
         Thread.sleep(3000);
         WebElement appointmentStatus = ten.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/trips-app/div/app-debt-management/app-appointment-details/div/div/form/div/div[1]/div/div/tb-dropdown[2]/div/div[2]/div/p-dropdown/div/label")));
         appointmentStatus.click();
@@ -1280,7 +1286,7 @@ public class stepDefinitions extends BaseClass {
 
     @And("^enter \"([^\"]*)\" and click search$")
     public void enter_something_and_click_search(String strArg1) throws Throwable {
-        WebElement tinSearchInput = ten.until(ExpectedConditions.visibilityOfElementLocated(By.id("SearchForm:accountNumber")));
+        WebElement tinSearchInput = ten.until(ExpectedConditions.visibilityOfElementLocated(By.id("SearchForm:tin")));
         tinSearchInput.sendKeys(strArg1);
 
         WebElement searchButton = driver.findElement(By.xpath("//button[@type='submit' and span='Search']"));
@@ -1326,7 +1332,7 @@ public class stepDefinitions extends BaseClass {
         Thread.sleep(3000);
         WebElement returnTypedropdown = driver.findElement(By.xpath("//*[@id=\"DebtCaseTaxType:ReturnType\"]/div[3]"));
         returnTypedropdown.click();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         driver.findElement(By.id("DebtCaseTaxType:ReturnType_1")).click();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -1425,9 +1431,9 @@ public class stepDefinitions extends BaseClass {
 
     @When("^User enters Case Title \"([^\"]*)\" and Office \"([^\"]*)\"$")
     public void user_enters_case_title_something_and_office_something(String strArg1, String strArg2) throws Throwable {
-        WebElement caseTitle = ten.until(ExpectedConditions.visibilityOfElementLocated(By.id("DebtManagementCase:CaseTitle")));
+        WebElement caseTitle = twenty.until(ExpectedConditions.visibilityOfElementLocated(By.id("DebtManagementCase:CaseTitle")));
         caseTitle.sendKeys(strArg1);
-
+        Thread.sleep(3000);
         WebElement officeDropdown = driver.findElement(By.xpath("//*[@id=\"DebtManagementCase:CaseOffice\"]/div[3]"));
         officeDropdown.click();
         Thread.sleep(4000);

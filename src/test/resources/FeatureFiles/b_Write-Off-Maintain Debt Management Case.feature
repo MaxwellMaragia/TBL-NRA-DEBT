@@ -14,7 +14,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case - Write-Off
     Then Click on reference number
     Then Debt status should be "New"
     And wait for plan to load "Total Debt:"
-#    When user enters Enforcement Action "Debt Write Off" and Reason "Debt Write Off"
+    When user enters Enforcement Action "Debt Write Off" and Reason "Debt Write Off"
     And clicks Submit button
     Then switch to frame1
     Then validation error displayed " This field can not be empty. "
@@ -77,7 +77,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case - Write-Off
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And pick the case
+    And click pick button
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Write Off Approval By Station Manager"

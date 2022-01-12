@@ -1,6 +1,6 @@
 Feature: [SUC:08-02] Maintain Debt Management Case - Distraint Action
 
-  @Distraint-Action @Distraint-Action-reject 
+  @Distraint-Action @Distraint-Action-reject
   Scenario: UAT_M8_08-02-05-Verify the Process of Escalated Case - Distraint Action -Debt Officer
     Given Open CRM URL Module as "tripscrmuser1"
     And Close Popup Window
@@ -67,7 +67,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case - Distraint Action
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And pick the debt case
+    And click pick button
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Distraint Action Approval By Tax Collector"
@@ -86,7 +86,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case - Distraint Action
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And click pick button
+    And pick the case
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Distraint Action Approval By Station Manager"

@@ -73,7 +73,7 @@ Feature: [SUC:08-02] Maintain Debt Management Case - Legal Action
     Then switch to frame0
     And enters Debt reference number in search results
     And picks the audit case
-    And click pick button
+    And pick the case
     Then switch to frame0
     Then Click on reference number
     Then Debt status should be "Pending Legal Action Approval By Deputy Commissioner Operations"
